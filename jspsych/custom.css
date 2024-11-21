@@ -1,0 +1,60 @@
+.custom-title {
+  font-family: 'Slabo 27px', serif;
+}
+
+.instructions {
+  max-width: 650px;
+  text-align: justify;
+  font-size: 19px;
+}
+
+.instructions_questionnary {
+  max-width: 800px;
+  text-align: justify;
+  font-size: 19px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bold {
+  font-weight: 550;
+}
+
+.stimuli {
+  font-size: 20px;
+}
+
+/* Hide the star indicating required questions */
+span.required {
+  display: none !important;
+}
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.jspsych-html-slider-response-container {
+  position: relative;
+}
+
+.jspsych-html-slider-response-stimulus {
+  margin-bottom: 20px;
+}
+
+.jspsych-html-slider-response-slider {
+  width: 100%;
+}
+
+.jspsych-html-slider-response-label-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -25px; /* Adjust this value as necessary */
+}
+
+.jspsych-html-slider-response-label {
+  width: 20%;
+  text-align: center;
+}
