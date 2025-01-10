@@ -123,11 +123,11 @@ const pilule_given = {
     `<div class='choice-container'><img style='width: 100px;' src='jspsych/img/pilule.png'><div class='choice-text'>Medicine</div></div>`,
     `<div class='choice-container'><img style='width: 100px;' src='jspsych/img/pilule.png'><div class='choice-text'>Placebo</div></div>`
     ],
-  prompt: function() {
-  return `<p class='instructions'>You give the ${jsPsych.timelineVariable('pilule')} to the patient.</p>`
-  }
-}
-
+    prompt: function() {
+      const pilule = jsPsych.timelineVariable('pilule');
+      return `<p class='instructions'>You give the ${pilule} to the patient.</p>`;
+    }
+// XXXXX
 const loop_pilule = {
   timeline: [pilule_given],
   loop_function: function(){
@@ -226,12 +226,13 @@ const slider = {
 const conditional_slider = {
   timeline: [slider],
   conditional_function: function() {
-    const response = jsPsych.data.get().last().values()[0].response.Q0;
-    if (response == "Patients are equally likely to recover after receiving the medicine or the placebo") {
-      return false;
-    } else {
-      return true;
+    const lastTrialData = jsPsych.data.get().last().values()[0];
+    if (!lastTrialData || !lastTrialData.response || !lastTrialData.response.Q0) {
+      console.error("Conditional function: Missing or invalid response data.");
+      return false; // Default behavior in case of missing data
     }
+    const response = lastTrialData.response.Q0;
+    return response !== "Patients are equally likely to recover after receiving the medicine or the placebo";
   }
 };
 
