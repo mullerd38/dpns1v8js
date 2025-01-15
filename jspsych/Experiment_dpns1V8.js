@@ -207,7 +207,7 @@ const slider = {
     let questionText = "";
     if (response == "Patients are more likely to recover after receiving the medicine") {
       questionText = "<p class='instructions'>You just said participants are better off to receive the medicine than the placebo.<br>" +
-      "To be more specific, how much more likely do you think patients who received the vaccine (instead of the placebo) are to recover?</p>";
+      "To be more specific, how much more likely do you think patients who received the medicine (instead of the placebo) are to recover?</p>";
     } else if (response == "Patients are more likely to recover after receiving the placebo") {
       questionText = "<p class='instructions'>You just said participants are better off to receive the placebo than the medicine.<br>" +
       "To be more specific, how much more likely do you think patients who received the placebo (instead of the medicine) are to recover?";
